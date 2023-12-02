@@ -1,0 +1,63 @@
+[
+    {
+      "name": "Warrior",
+      "image": "/images/classtypes/warrior.webp",
+      "stats": {
+        "STR": 15,
+        "DEX": 9,
+        "CON": 14,
+        "INT": 8,
+        "WIS": 8,
+        "CHA": 8
+      }
+    },
+    {
+      "name": "Cleric",
+      "image": "/images/classtypes/cleric.webp",
+      "stats": {
+        "STR": 13,
+        "DEX": 9,
+        "CON": 14,
+        "INT": 8,
+        "WIS": 10,
+        "CHA": 8
+      }
+    },
+    {
+      "name": "Ranger",
+      "image": "/images/classtypes/ranger.webp",
+      "stats": {
+        "STR": 13,
+        "DEX": 10,
+        "CON": 14,
+        "INT": 8,
+        "WIS": 10,
+        "CHA": 8
+      }
+    },
+    {
+      "name": "Rogue",
+      "image": "/images/classtypes/rogue.webp",
+      "stats": {
+        "STR": 13,
+        "DEX": 11,
+        "CON": 14,
+        "INT": 8,
+        "WIS": 10,
+        "CHA": 8
+      }
+    },
+    {
+      "name": "Wizard",
+      "image": "/images/classtypes/wizard.webp",
+      "stats": {
+        "STR": 8,
+        "DEX": 15,
+        "CON": 12,
+        "INT": 13,
+        "WIS": 8,
+        "CHA": 8
+      }
+    }
+  ]
+  
