@@ -5,9 +5,10 @@ export const SelectClass = ({ handleClassClick, classType }) => {
 
   return (
     <div className="flex flex-col items-center justify-center h-full gap-24">
+      
       <div className="flex flex-col items-center gap-8">
         <h4 className="text-3xl">Select your class:</h4>
-        <div className="flex flex-wrap justify-center gap-4 w-72">
+        <div className="flex flex-wrap justify-center w-full gap-4">
           {classTypes.map((chosenClass) => (
             <>
               <button
