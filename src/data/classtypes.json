@@ -58,6 +58,19 @@
         "WIS": 8,
         "CHA": 8
       }
+    },
+    {
+      "name": "Terminator",
+      "image": "/images/classtypes/terminator.webp",
+      "stats": {
+        "STR": 20,
+        "DEX": 20,
+        "CON": 20,
+        "INT": 20,
+        "WIS": 10,
+        "CHA": 10
+      }
     }
+    
   ]
   
