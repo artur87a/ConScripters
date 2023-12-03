@@ -12,13 +12,15 @@ function App() {
   const [year, setYear] = useState(1);
   const [classType, setClassType] = useState("");
   const [name, setName] = useState("");
-  const [playerCardVisibility, setPlayerCardVisibility] = useState(false);
-
+  const [playerCardVisibility, setPlayerCardVisibility] = useState(true);
+  const [health, setHealth] = useState(100);
+  const [gold, setGold] = useState(0);
+  
   let player = 
     {
       name: `${name}`,
       class: `${classType}`,
-      health: 100,
+      health: `${health}`,
       skills: {
         strength: 0,
         dexterity: 0,
@@ -28,7 +30,35 @@ function App() {
         charisma: 0
       },
       inventory: {
-        gold: 0
+        gold: `${gold}`,
+        items: [
+          {
+            name: "Beginner Sword",
+            damage: 10,
+            type: "weapon",
+            quantity: 1,
+            durability: 100,
+            description: "This is a sword",
+            itemlevel : 1
+          },
+          {
+            name: "Beginner Shield",
+            defense: 10,
+            type: "armor",
+            quantity: 1,
+            durability: 100,
+            description: "This is a shield",
+            itemlevel : 1
+          },
+          {
+            name: "Potion",
+            heal: 10,
+            type: "consumable",
+            quantity: 1,
+            description: "This is a potion",
+            itemlevel : 10
+          },
+        ]
       }
     }
 
@@ -79,7 +109,7 @@ function App() {
       <main className="grid items-center justify-center min-h-screen grid-cols-12 grid-rows-6 bg-dark">
         <Calender day={dayString(day)} week={week} month={monthString(month)} year={year} />
         <DashBoard setPlayerCardVisibility={setPlayerCardVisibility} incrementDays={incrementDays} classType={classType} setClassType={setClassType} name={name} setName={setName}/>
-        <PlayerCard playerCardVisibility={playerCardVisibility} player={player} />
+        <PlayerCard playerCardVisibility={playerCardVisibility} player={player} setHealth={setHealth} health={health}  setGold={setGold} gold />
       </main>
     </>
   );
