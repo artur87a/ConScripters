@@ -7,8 +7,8 @@ export const PlayerCard = ({
   setHealth,
   setGold,
 }) => {
-    const [inventoryOpen, setInventoryOpen] = useState(true);
-    const [statsOpen, setStatsOpen] = useState(true);
+    const [inventoryOpen, setInventoryOpen] = useState(false);
+    const [statsOpen, setStatsOpen] = useState(false);
   
   function handleItemClick(item) {
     if (item.type === "consumable") {
