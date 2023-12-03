@@ -64,6 +64,7 @@ export const PlayerCard = ({
               ${item.type === "consumable" ? "text-red-500" : ""}
               ${item.type === "weapon" ? "text-blue-500" : ""}
               ${item.type === "armor" ? "text-green-500" : ""}
+              ${item.itemlevel > 9 ? "before:content-9" : ""}
               hover:cursor-pointer
               `}
               >

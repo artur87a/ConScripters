@@ -56,7 +56,7 @@ function App() {
             type: "consumable",
             quantity: 1,
             description: "This is a potion",
-            itemlevel : 10
+            itemlevel : 1
           },
         ]
       }
