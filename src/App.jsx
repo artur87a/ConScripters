@@ -13,55 +13,65 @@ function App() {
   const [classType, setClassType] = useState("");
   const [name, setName] = useState("");
   const [playerCardVisibility, setPlayerCardVisibility] = useState(true);
-  const [health, setHealth] = useState(100);
+  const [health, setHealth] = useState(40);
   const [gold, setGold] = useState(0);
-  
-  let player = 
-    {
-      name: `${name}`,
-      class: `${classType}`,
-      health: `${health}`,
-      skills: {
-        strength: 0,
-        dexterity: 0,
-        constitution: 0,
-        intelligence: 0,
-        wisdom: 0,
-        charisma: 0
-      },
-      inventory: {
-        gold: `${gold}`,
-        items: [
-          {
-            name: "Beginner Sword",
-            damage: 10,
-            type: "weapon",
-            quantity: 1,
-            durability: 100,
-            description: "This is a sword",
-            itemlevel : 1
-          },
-          {
-            name: "Beginner Shield",
-            defense: 10,
-            type: "armor",
-            quantity: 1,
-            durability: 100,
-            description: "This is a shield",
-            itemlevel : 1
-          },
-          {
-            name: "Potion",
-            heal: 10,
-            type: "consumable",
-            quantity: 1,
-            description: "This is a potion",
-            itemlevel : 1
-          },
-        ]
-      }
-    }
+  const [exp, setExp] = useState(0);
 
+  let player = {
+    name: `${name}`,
+    class: `${classType}`,
+    health: `${health}`,
+    exp: `${exp}`,
+    skills: [
+      {
+        name:"Strength",
+        level: 1,
+      },
+      {
+        name:"Dexterity",
+        level: 1,
+      },
+      {
+        name:"Intelligence",
+        level: 1,
+      },
+      {
+        name:"Endurance",
+        level: 1,
+      }
+    ],
+    inventory: {
+      gold: `${gold}`,
+      items: [
+        {
+          name: "Beginner Sword",
+          damage: 10,
+          type: "weapon",
+          quantity: 1,
+          durability: 100,
+          description: "This is a sword",
+          itemlevel: 1,
+        },
+        {
+          name: "Beginner Shield",
+          defense: 10,
+          type: "armor",
+          quantity: 1,
+          durability: 100,
+          description: "This is a shield",
+          itemlevel: 1,
+        },
+        {
+          name: "Beginner Potion",
+          heal: 10,
+          type: "consumable",
+          quantity: 1,
+          description: "This is a potion",
+          itemlevel: 1,
+        },
+      ],
+    },
+  };
 
   const incrementDays = () => {
     if (day < 7) {
@@ -71,11 +81,19 @@ function App() {
       incrementWeek();
     }
   };
-  
-  const  dayString = (day) => {
-    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+  const dayString = (day) => {
+    const days = [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ];
     return days[day - 1];
-  }
+  };
 
   const incrementWeek = () => {
     if (week < 4) {
@@ -95,10 +113,23 @@ function App() {
     }
   };
 
-  const  monthString = (month) => {
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const monthString = (month) => {
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
     return months[month - 1];
-  }
+  };
 
   const incrementYear = () => {
     setYear(year + 1);
@@ -107,9 +138,28 @@ function App() {
   return (
     <>
       <main className="grid items-center justify-center min-h-screen grid-cols-12 grid-rows-6 bg-dark">
-        <Calender day={dayString(day)} week={week} month={monthString(month)} year={year} />
-        <DashBoard setPlayerCardVisibility={setPlayerCardVisibility} incrementDays={incrementDays} classType={classType} setClassType={setClassType} name={name} setName={setName}/>
-        <PlayerCard playerCardVisibility={playerCardVisibility} player={player} setHealth={setHealth} health={health}  setGold={setGold} gold />
+        <Calender
+          day={dayString(day)}
+          week={week}
+          month={monthString(month)}
+          year={year}
+        />
+        <DashBoard
+          setPlayerCardVisibility={setPlayerCardVisibility}
+          incrementDays={incrementDays}
+          classType={classType}
+          setClassType={setClassType}
+          name={name}
+          setName={setName}
+        />
+        <PlayerCard
+          playerCardVisibility={playerCardVisibility}
+          player={player}
+          setHealth={setHealth}
+          health={health}
+          setGold={setGold}
+          gold
+        />
       </main>
     </>
   );
