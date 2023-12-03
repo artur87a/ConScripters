@@ -18,12 +18,11 @@ export const PlayerCard = ({
       } else {
         setHealth(newHealth);
       }
+      item.quantity = item.quantity - 1;
+      if (item.quantity === 0) {
+      // remove item
+      }
     }
-    item.quantity = item.quantity - 1;
-    if (item.quantity === 0) {
-    // remove item
-    }
-    console.log(item.quantity)
   }
 
 
@@ -81,6 +80,7 @@ export const PlayerCard = ({
               ${item.type === "consumable" ? "text-red-500" : ""}
               ${item.type === "weapon" ? "text-blue-500" : ""}
               ${item.type === "armor" ? "text-green-500" : ""}
+              noselect
               hover:cursor-pointer
               `}
               >
